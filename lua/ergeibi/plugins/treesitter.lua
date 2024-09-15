@@ -1,16 +1,16 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    --build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
             -- A list of parser names, or "all"
             ensure_installed = {
                 "lua", "rust",
-                "bash",
+                "bash","asm","c",
             },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = false,
+            sync_install = true,
 
             -- Automatically install missing parsers when entering buffer
             -- Recommendation: set to false if you don"t have `tree-sitter` CLI installed locally
