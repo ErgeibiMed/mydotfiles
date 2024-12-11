@@ -1,6 +1,6 @@
-require("ergeibi.set")
-require("ergeibi.remap")
-require("ergeibi.lazy_init")
+require("config.set")
+require("config.remap")
+require("config.lazy_init")
 
 local augroup = vim.api.nvim_create_augroup
 local TheMoGroup = augroup('TheMo', {})

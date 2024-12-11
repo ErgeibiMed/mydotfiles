@@ -1,7 +1,7 @@
 return {
     "nvim-telescope/telescope.nvim",
 
-    tag = "0.1.5",
+    tag = "0.1.8",
 
     dependencies = {
         "nvim-lua/plenary.nvim"
@@ -10,10 +10,14 @@ return {
     config = function()
         require('telescope').setup({
             defaults = {
-      layout_strategy = 'vertical',
-      layout_config = { height = 0.90, width= 0.60 },
-    },
-
+                layout_strategy = 'vertical',
+                layout_config = { height = 0.90, width = 0.60 },
+            },
+            pickers = {
+                find_files = {
+                    theme = "ivy",
+                }
+            }
         })
 
         local builtin = require('telescope.builtin')
@@ -33,7 +37,6 @@ return {
         end)
         vim.keymap.set('n', '<leader>vh', builtin.help_tags, {})
         --vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
-   end
+    end
 
 }
-
