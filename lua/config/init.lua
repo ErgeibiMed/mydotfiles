@@ -2,6 +2,9 @@ require("config.set")
 require("config.remap")
 require("config.lazy_init")
 
+
+vim.diagnostic.config({virtual_text = { current_line = true }})
+
 local augroup = vim.api.nvim_create_augroup
 local TheMoGroup = augroup('TheMo', {})
 

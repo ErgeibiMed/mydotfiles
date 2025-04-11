@@ -7,7 +7,7 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        "hrsh7th/nvim-cmp",
+        {"hrsh7th/nvim-cmp",event="InsertEnter"},
       --  "L3MON4D3/LuaSnip",
         {
 	"L3MON4D3/LuaSnip",
@@ -95,13 +95,24 @@ return {
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
-       --     preselect = cmp.PreselectMode.None,
+            formatting= {
+                format = function (entry, vim_item)
+                   vim_item.menu=nil
+                    return vim_item
+                end,
+            },
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
-            --performance = {cmp.performance.max_view_entries == 6} ,
+            --performance = {
+            --    cmp.config.performance.max_view_entries== 5,}
+            --,
             preselect = cmp.PreselectMode.None,
+            confirm_opts = {
+					behavior = cmp.ConfirmBehavior.Replace,
+					select = true,
+				},
             view = {
                 docs = {
                     auto_open = false
@@ -112,8 +123,8 @@ return {
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-y>'] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete(),
-                ["<C-d>"] = cmp.mapping.scroll_docs(3),
-                ["<C-u>"] = cmp.mapping.scroll_docs(-3),
+                ["<C-d>"] = cmp.mapping.scroll_docs(4),
+                ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 ['<C-g>'] = function()
                     if cmp.visible_docs() then
                         cmp.close_docs()
