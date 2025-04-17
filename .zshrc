@@ -2,12 +2,14 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export PATH=/home/mohamed/.go/bin:$PATH
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=/home/mohamed/.go/bin:$PATH
+export PATH=/home/mohamed/go/bin:$PATH
 export PATH=/opt/cpanel/ea-nodejsXX/bin:$PATH
 export PATH=/home/mohamed/.cargo/bin:$PATH
-GRADLE_HOME=/opt/gradle/gradle-7.4.2
-export PATH=${GRADLE_HOME}/bin:${PATH}
+#GRADLE_HOME=/opt/gradle/gradle-7.4.2
+#export PATH=${GRADLE_HOME}/bin:${PATH}
+export PATH=/opt/gradle/gradle-7.4.2/bin:$PATH
 export PATH=/home/mohamed/.jdks/openjdk-21.0.1/bin:$PATH
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -44,14 +46,14 @@ ZSH_THEME="robbyrussell"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+ DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 

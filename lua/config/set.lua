@@ -28,7 +28,7 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 40
+vim.opt.updatetime = 75
 
 vim.opt.colorcolumn = "00"
 
