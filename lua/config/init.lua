@@ -4,6 +4,8 @@ require("config.lazy_init")
 
 
 vim.diagnostic.config({virtual_text = { current_line = true }})
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
 
 local augroup = vim.api.nvim_create_augroup
 local TheMoGroup = augroup('TheMo', {})
