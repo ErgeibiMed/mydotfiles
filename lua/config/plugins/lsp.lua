@@ -7,15 +7,15 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        {"hrsh7th/nvim-cmp",event="InsertEnter"},
-      --  "L3MON4D3/LuaSnip",
+        { "hrsh7th/nvim-cmp", event = "InsertEnter" },
+        --  "L3MON4D3/LuaSnip",
         {
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!).
-	build = "make install_jsregexp"
-},
+            "L3MON4D3/LuaSnip",
+            -- follow latest release.
+            version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+            -- install jsregexp (optional!).
+            build = "make install_jsregexp"
+        },
         "saadparwaiz1/cmp_luasnip",
         "j-hui/fidget.nvim",
     },
@@ -38,14 +38,14 @@ return {
                 "gopls"
             },
             handlers = {
-               -- function(server_name) -- default handler (optional)
+                -- function(server_name) -- default handler (optional)
 
-               --     require("lspconfig")[server_name].setup {
-               --         capabilities = capabilities
-               --     }
-               -- end,
+                --     require("lspconfig")[server_name].setup {
+                --         capabilities = capabilities
+                --     }
+                -- end,
 
-                 ["lua_ls"] = function()
+                ["lua_ls"] = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.lua_ls.setup {
                         capabilities = capabilities,
@@ -88,16 +88,16 @@ return {
                 end,
             }
         })
-        local cmp_select = { behavior = cmp.SelectBehavior.Select, count=1 }
+        local cmp_select = { behavior = cmp.SelectBehavior.Select, count = 1 }
         cmp.setup({
             snippet = {
                 expand = function(args)
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
-            formatting= {
-                format = function (entry, vim_item)
-                   vim_item.menu=nil
+            formatting = {
+                format = function(entry, vim_item)
+                    vim_item.menu = nil
                     return vim_item
                 end,
             },
@@ -110,9 +110,9 @@ return {
             --,
             preselect = cmp.PreselectMode.None,
             confirm_opts = {
-					behavior = cmp.ConfirmBehavior.Replace,
-					select = true,
-				},
+                behavior = cmp.ConfirmBehavior.Replace,
+                select = true,
+            },
             view = {
                 docs = {
                     auto_open = false
@@ -134,23 +134,23 @@ return {
                 end,
             }),
             sources = cmp.config.sources({
-               { name = 'nvim_lsp' },
+                { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
                 { name = 'buffer' },
             })
         })
 
-       -- vim.diagnostic.config({
-       --     -- update_in_insert = true,
-       --     float = {
-       --         focusable = true,
-       --         style = "minimal",
-       --         border = "rounded",
-       --         source = "always",
-       --         header = "",
-       --         prefix = "",
-       --     },
-       -- })
+        -- vim.diagnostic.config({
+        --     -- update_in_insert = true,
+        --     float = {
+        --         focusable = true,
+        --         style = "minimal",
+        --         border = "rounded",
+        --         source = "always",
+        --         header = "",
+        --         prefix = "",
+        --     },
+        -- })
 
 
         vim.diagnostic.config({
@@ -188,6 +188,6 @@ return {
             update_in_insert = true,
         })
 
-vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+        vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
     end
 }

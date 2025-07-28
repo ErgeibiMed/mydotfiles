@@ -31,4 +31,3 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 75
 
 vim.opt.colorcolumn = "00"
-
