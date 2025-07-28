@@ -3,44 +3,34 @@ require("config.remap")
 require("config.lazy_init")
 
 
-vim.diagnostic.config(
-    {
-        virtual_text =
-        { current_line = true }
-    }
-
-)
-
-
-vim.keymap.set("n", "<leader>pv", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+--vim.diagnostic.config(
+--    {
+--        virtual_text =
+--        { current_line = true }
+--    }
+--
+--)
 
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-    callback = function()
-        local mode = vim.api.nvim_get_mode().mode
-        local filetype = vim.bo.filetype
-        if vim.bo.modified == true and mode == 'n' and filetype ~= "oil" then
-            vim.cmd('lua vim.lsp.buf.format()')
-        else
-        end
-    end
-})
+vim.keymap.set("n", "<leader>pv", "<cmd>Ex<CR>")
+
+
+--vim.api.nvim_create_autocmd("BufWritePre", {
+--    callback = function()
+--        local mode = vim.api.nvim_get_mode().mode
+--        local filetype = vim.bo.filetype
+--        if vim.bo.modified == true and mode == 'n' and filetype ~= "oil" then
+--            vim.cmd('lua vim.lsp.buf.format()')
+--        else
+--        end
+--    end
+--})
 
 local augroup = vim.api.nvim_create_augroup
 local TheMoGroup = augroup('TheMo', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
-
---function R(name)
---   require("plenary.reload").reload_module(name)
---end
-
---vim.filetype.add({
---   extension = {
---      templ = 'templ',
--- }
---})
 
 autocmd('TextYankPost', {
     group = yank_group,

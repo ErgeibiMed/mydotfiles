@@ -1,9 +1,29 @@
 return {
-  "vague2k/vague.nvim",
-  config = function()
-    -- NOTE: you do not need to call setup if you don't want to.
-    require("vague").setup({
-      -- optional configuration here
-    })
-  end
+      "rose-pine/neovim",
+	name = "rose-pine",
+    config =function()
+        require("rose-pine").setup({
+    variant = "main", -- auto, main, moon, or dawn
+    dark_variant = "main", -- main, moon, or dawn
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
+
+    enable = {
+        terminal = true,
+        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+        migrations = true, -- Handle deprecated options automatically
+    },
+
+    styles = {
+        bold = true,
+        italic = true,
+        transparency = true,
+    },
+
+})
+        --vim.cmd("colorscheme rose-pine")
+         vim.cmd("colorscheme rose-pine-main")
+        -- vim.cmd("colorscheme rose-pine-moon")
+        -- vim.cmd("colorscheme rose-pine-dawn")
+    end,
 }
