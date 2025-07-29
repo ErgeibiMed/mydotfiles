@@ -52,7 +52,7 @@ return {
                         settings = {
                             Lua = {
                                 diagnostics = {
-                                    globals = { "vim", "it", "describe", "before_each", "after_each" },
+                                    globals = { "vim"  },
                                 }
                             }
                         }
@@ -105,9 +105,9 @@ return {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
             },
-            --performance = {
-            --    cmp.config.performance.max_view_entries== 5,}
-            --,
+            performance = {
+                view_entries=5}
+            ,
             preselect = cmp.PreselectMode.None,
             confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,
