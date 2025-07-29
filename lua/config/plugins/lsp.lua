@@ -52,7 +52,7 @@ return {
                         settings = {
                             Lua = {
                                 diagnostics = {
-                                    globals = { "vim"  },
+                                    globals = { 'vim'  },
                                 }
                             }
                         }
@@ -188,6 +188,5 @@ return {
             update_in_insert = true,
         })
 
-        vim.keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Show diagnostic" })
     end
 }
