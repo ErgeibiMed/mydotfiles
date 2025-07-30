@@ -29,6 +29,7 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
+
         require("fidget").setup({})
         require("mason").setup()
         require("mason-lspconfig").setup({
@@ -106,7 +107,7 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             performance = {
-                view_entries=5}
+                max_view_entries=5}
             ,
             preselect = cmp.PreselectMode.None,
             confirm_opts = {
