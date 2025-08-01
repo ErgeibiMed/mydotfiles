@@ -11,6 +11,7 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz") -- move up
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]])

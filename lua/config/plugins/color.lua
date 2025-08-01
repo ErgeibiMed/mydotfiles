@@ -1,29 +1,15 @@
 return {
-      "rose-pine/neovim",
-	name = "rose-pine",
-    config =function()
-        require("rose-pine").setup({
-    variant = "main", -- auto, main, moon, or dawn
-    dark_variant = "moon", -- main, moon, or dawn
-    dim_inactive_windows = false,
-    extend_background_behind_borders = true,
-
-    enable = {
-        terminal = true,
-        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
-        migrations = true, -- Handle deprecated options automatically
-    },
-
-    styles = {
-        bold = true,
-        italic = true,
-        transparency = true,
-    },
-
-})
-        --vim.cmd("colorscheme rose-pine")
-        -- vim.cmd("colorscheme rose-pine-main")
-         vim.cmd("colorscheme rose-pine-moon")
-        -- vim.cmd("colorscheme rose-pine-dawn")
+    "sainnhe/gruvbox-material",
+    enabled = true,
+    priority = 1000,
+    config = function()
+        vim.g.gruvbox_material_transparent_background = 1
+        vim.g.gruvbox_material_foreground = "mix"
+        vim.g.gruvbox_material_background = "hard"
+        vim.g.gruvbox_material_ui_contrast = "high"
+        vim.g.gruvbox_material_float_style = "bright"
+        vim.g.gruvbox_material_statusline_style = "material"
+        vim.g.gruvbox_material_cursor = "auto"
+        vim.cmd.colorscheme("gruvbox-material")
     end,
 }

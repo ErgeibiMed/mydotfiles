@@ -1,7 +1,12 @@
 {
+<<<<<<< HEAD
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+=======
+  "gruvbox-material": { "branch": "master", "commit": "f7b152174433c35bbe63e146e9ae9a28c166f47c" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "mason.nvim": { "branch": "main", "commit": "3671ab0d40aa5bd24b1686562bd0a23391ecf76a" },
+>>>>>>> 7b0cdea (switch to native lsp)
   "mini.pick": { "branch": "main", "commit": "fa1e449e1080bf7aa9b2890ee186d23b1b4e1287" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
-  "nvim-web-devicons": { "branch": "master", "commit": "4a8369f4c78ef6f6f895f0cec349e48f74330574" },
-  "rose-pine": { "branch": "main", "commit": "72befaffeac38db7bdd49e0549eaa2c4806dd878" }
+  "nvim-web-devicons": { "branch": "master", "commit": "4a8369f4c78ef6f6f895f0cec349e48f74330574" }
 }
