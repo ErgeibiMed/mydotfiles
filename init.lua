@@ -4,6 +4,14 @@ require("config")
 vim.cmd(":hi statusline guibg=NONE")
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
+vim.api.nvim_create_autocmd('TextYankPost', {
+    callback = function()
+        vim.hl.on_yank()
+    end
+})
+
+vim.api.nvim_set_option('clipboard', 'unnamedplus')
+
 vim.lsp.set_log_level('off')
 --------------------------------- lsp stuff--------------------------------------------------------------------
 
@@ -45,22 +53,22 @@ vim.api.nvim_create_autocmd('LspAttach', {
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         --local opts = { buffer = ev.buf }
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
-            -- Create a keymap for vim.lsp.buf.implementation ...
-            local opts = { buffer = ev.buf }
-            vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-            vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-            vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-            vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
-            vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
-            --vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
-            --vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
-            --vim.keymap.set('n', '<space>wl', function()
-            --  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-            --end, opts)
-            vim.keymap.set('n', '<leader>tdf', vim.lsp.buf.type_definition, opts)
-            vim.keymap.set('n', 'grn', vim.lsp.buf.rename, opts)
-            vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
-            vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
+        -- Create a keymap for vim.lsp.buf.implementation ...
+        local opts = { buffer = ev.buf }
+        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+        vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+        vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+        --vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+        --vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+        --vim.keymap.set('n', '<space>wl', function()
+        --  print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+        --end, opts)
+        vim.keymap.set('n', '<leader>tdf', vim.lsp.buf.type_definition, opts)
+        vim.keymap.set('n', 'grn', vim.lsp.buf.rename, opts)
+        vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'grr', vim.lsp.buf.references, opts)
         print(opts)
         -- Enable auto-completion. Note: Use CTRL-Y to select an item. |complete_CTRL-Y|
         if client:supports_method('textDocument/completion') then
