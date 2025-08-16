@@ -190,7 +190,7 @@ mode "resize" {
 
 # Display wallpaper
 #make sure feh utility is dowloaded
-exec_always feh --bg-fill ~/.config/nvim/1345265.png
+exec_always feh --bg-fill ~/wallpapers/1345265.png
 #Let's start with the installation of the theme.
 #
 #Here, I will be using the materia-gtk-theme and papirus icons. But you can use any of your preferred ones.
@@ -243,6 +243,10 @@ bar {
 
         }
 }
+## to unHIDE window title bar uncomment the 3 next lines
+default_border pixel 1
+#default_floating_border pixel 1
+for_window [class=^.*"] border pixel 1
 ## Color shemes for windows
 set $bgcolor    #523d6499
 set $in-bgcolor #3636364D
