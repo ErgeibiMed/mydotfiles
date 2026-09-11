@@ -9,10 +9,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
         vim.hl.on_yank()
     end
 })
-
+vim.opt.clipboard:append("unnamedplus")
 vim.api.nvim_set_option('clipboard', 'unnamedplus')
 
-vim.lsp.set_log_level('off')
+vim.lsp.log.set_level('off')
 --------------------------------- lsp stuff--------------------------------------------------------------------
 
 

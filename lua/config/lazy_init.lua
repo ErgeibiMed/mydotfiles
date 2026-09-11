@@ -16,8 +16,8 @@ require("lazy").setup({
     change_detection = { notify = false },
     opts={
         rocks={
-            hererocks=false,
-            enable=false
+            hererocks=true,
+            enable=true
         }
     }
 })
