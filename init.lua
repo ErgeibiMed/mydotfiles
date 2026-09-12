@@ -1,6 +1,7 @@
 require("config")
 
 
+
 vim.cmd(":hi statusline guibg=NONE")
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
