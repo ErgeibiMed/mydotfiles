@@ -49,7 +49,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
         -- Enable completion triggered by <c-x><c-o>
-        -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
         -- Buffer local mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
         --local opts = { buffer = ev.buf }
@@ -76,7 +76,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
             -- Optional: trigger autocompletion on EVERY keypress. May be slow!
             local chars = {}; for i = 32, 126 do table.insert(chars, string.char(i)) end
             client.server_capabilities.completionProvider.triggerCharacters = chars
-            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+            vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = false })
         end
         -------------------------------- Auto-format ("lint") on save.
         -------------------------------- Usually not needed if server supports "textDocument/willSaveWaitUntil".

@@ -1,16 +1,13 @@
 return {
-    cmd = { 'clangd',
-        '--clang-tidy',
-        '--background-index',
-        '--offset-encoding=utf-8' },
+    cmd = { 'clice', 'serve', },
     filetypes = { 'c', 'cpp' },
     root_markers = {
-        '.clangd',
+        'clice.toml',
         '.clang-tidy',
         '.clang-format',
         'compile_commands.json',
         'compile_flags.txt',
-        'configure.ac', -- AutoTools
+        'configure.ac',
         '.git',
     },
     capabilities = {
@@ -19,7 +16,7 @@ return {
                 editsNearCursor = true,
             },
         },
-        offsetEncoding = { 'utf-8', 'utf-16' },
+        offsetEncoding = { 'utf-8' },
     },
 
 }
